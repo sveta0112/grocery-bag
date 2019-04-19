@@ -9,8 +9,11 @@ var User = require("./models/user.js");
 var Item = require("./models/item.js");
 var itemRoutes = require("./routes/items.js");
 var indexRoutes = require("./routes/index.js");
+const PORT = process.env.PORT || "3000"
 
-mongoose.connect("mongodb://localhost:27017/shopping_list", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost:27017/shopping_list", { useNewUrlParser: true });
+
+mongoose.connect("mongodb://lana:lana1234@ds137256.mlab.com:37256/shopping_list", { useNewUrlParser: true });
 
 
 var app = express();
@@ -49,6 +52,6 @@ app.use(indexRoutes);
 app.use(itemRoutes);
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server started at port 3000!");
 });
