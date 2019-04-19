@@ -1,0 +1,55 @@
+<% include partials/header %>
+
+<section class="section container" id="signup">
+        <div class="row">
+            <div class="col s12 l5 offset-l2">
+                <h3 class="indigo-text text-darken-4 center">Add a New Item</h3>
+                <form action="/items/<%= currentUser._id %>" method="POST">
+                    <div class="input-field">
+                        <select name="category">
+                            <option value="" disabled selected>Choose your category</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Meat">Meat</option>
+                            <option value="Fish">Fish</option>
+                            <option value="Fruits">Fruits</option>
+                            <option value="Veggies">Veggies</option>
+                            <option value="Drinks">Drinks</option>
+                            <option value="Grains">Grains</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label>Category</label>
+                    </div>
+                    <div class="input-field">
+                        <select name="store">
+                            <option value="" disabled selected>Choose your store</option>
+                            <option value="Safeway">Safeway</option>
+                            <option value="Trader Joe">Trader Joe</option>
+                            <option value="Whole Foods">Whole Foods</option>
+                            <option value="Target">Target</option>
+                            <option value="Costco">Costco</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label>Store</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="desc" name="notes" >
+                        <label for="desc">Item Notes</label>
+                    </div>
+                    <div class="input-field center">
+                        <button class="btn green darken-3">Add</button>
+                    </div>
+                    <a  href="/items/<%= currentUser._id%>">Go Back!</a>
+                 </form>
+                 
+            </div>
+        </div>
+    </section>
+
+  
+  
+
+
+ 
+
+<% include partials/footer %>
+

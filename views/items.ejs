@@ -1,0 +1,55 @@
+<% include partials/header %>
+
+<section class="container">
+  <div class="container">
+    <h3>Welcome <%= currentUser.username.substring(0, currentUser.username.indexOf("@")) %> !</h3>
+    <a class="btn green darken-3"  href="/items/<%= currentUser._id %>/new">Add New Item</a>
+  </div>
+  <hr>
+  <br/>
+  <div class="row">
+  <% if(items.length === 0) { %>
+    <div class="container">
+      <p>No items in your list! Pllease add some...</p>
+    </div>
+    <% }else { %>
+      <% items.forEach((item) => { %>
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+                <% if(item.category === "Dairy") { %>
+                  <img src="https://images.unsplash.com/photo-1523473827533-2a64d0d36748?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80">
+                <% }  else if(item.category === "Meat") { %>  
+                  <img src="https://images.unsplash.com/photo-1448907503123-67254d59ca4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80" >
+                <% }  else if(item.category === "Drinks") { %>  
+                  <img src="https://images.unsplash.com/photo-1444728399417-08d2aa39e6f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+                <% }  else if(item.category === "Fish") { %>  
+                  <img src="https://images.unsplash.com/photo-1534256958597-7fe685cbd745?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" >
+                <% } else if(item.category === "Fruits") { %>  
+                  <img src="https://images.unsplash.com/photo-1487376480913-24046456a727?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                <% }  else if(item.category === "Veggies") {%>
+                  <img src="https://images.unsplash.com/photo-1452948491233-ad8a1ed01085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80" >
+                <% } else if(item.category === "Grains"){ %>  
+                  <img src="https://images.unsplash.com/photo-1542990253-a781e04c0082?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=684&q=80">
+                <% }  else { %>  
+                  <img src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=815&q=80">
+                <% } %>  
+            </div>
+            <div class="card-action">
+                <a href="/items/<%= currentUser._id %>/iteminfo/<%= item._id %>">More Info</a>
+            </div>
+          </div>
+      </div>
+      
+      <% }); %>    
+
+      <% } %>
+  </div>
+</section>
+
+
+ 
+
+
+<% include partials/footer %>
+
