@@ -6,10 +6,10 @@ Your personal Grocery Bag makes it easy for you to keep in mind what to buy in t
 See demo at https://grocery-demo.herokuapp.com/
 
 
-![snippet](img/grocery1.png.png)
-![snippet](img/grocery2.png.png)
-![snippet](img/grocery3.png.png)
-![snippet](img/grocery4.png.png)
+![snippet](img/grocery1.png)
+![snippet](img/grocery2.png)
+![snippet](img/grocery3.png)
+![snippet](img/grocery4.png)
 
 
 ## Table of Contents
